@@ -1,0 +1,28 @@
+---
+title: "Shiny App"
+author: "Mathew Erzoah"
+date: "May 8, 2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Overview
+The idea of this application is to let users be able to predict their vehicles' MPG by entering specs such as transmission type, weight, horse power, and number of cylinders.
+
+## Dataset
+For this application, we used the mtcars dataset from datasets library The summary of the dataset is below:
+
+```{r}
+summary(mtcars)
+```
+
+## Model
+We used lm to fit a multivariable regression; mpg as outcome, am, cyl, hp, and wt as predictors. The coefficients is shown below:
+
+```{r}
+lm(mpg ~ am + cyl + hp + wt, data = mtcars)
+```
+
